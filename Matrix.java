@@ -48,8 +48,58 @@ public class Matrix {
     //основная функция, где храниться основной алгортм
     public void Calculate(){
 
+        if(isOpenOrClose()){
+            //задача закрыта
+
+        }
+        else{
+            //задача открыта, ее нужно зактрыть
+            //добавим фиктивного потредителя\отправителя
+
+
+        }
+
     }
 
+
+    public boolean isOpenOrClose(){
+        int totalInStore = 0;
+        int totalInOrder = 0;
+
+        for (int s : store) {
+            totalInOrder+= s;
+        }
+
+        for (int o: order) {
+            totalInOrder+= o;
+        }
+
+        if (totalInOrder == totalInStore) return true;
+        else{
+            closeExample(totalInOrder - totalInStore);
+            return false;
+        }
+    }
+
+    public void closeExample(int difference){
+        //difference = Math.abs(difference);
+
+        if (difference > 0){ //значит заказов больше, нужно добавить мнимого поставщика с этой разницей
+            //нужно изменить значения, а так же поставщиков
+        }
+        if(difference < 0 ){ //значит потребителей больше, нужно добавть мнимого потредителя с модулем этой разницы
+            //нужно изменить значения массивов поставщиков-складов
+
+        }
+
+
+        System.out.print("Так выглядит таблица после ее закрытия");
+        showMatr();
+    }
+
+    public void change(){ //как реализовать добавление нужного ряда?
+
+    }
 
 
 
